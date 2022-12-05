@@ -6,4 +6,10 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
+
+body,  button {
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+}
 `
