@@ -9,57 +9,55 @@ export const HeaderContainer = styled.header`
   height: 12.18rem;
 
   background: ${(props) => props.theme['blue-300']};
+`
 
-  nav {
-    display: flex;
-    justify-content: space-between;
+export const NavContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
 
-    max-width: 65rem;
-    width: 100%;
+  max-width: 65rem;
+  width: 100%;
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: ${(props) => props.theme.white};
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: ${(props) => props.theme.white};
 
-      margin-bottom: 1rem;
-    }
+    margin-bottom: 1rem;
+  }
 
-    h3 {
-      font-size: 1.125rem;
-      font-weight: 400;
-      color: ${(props) => props.theme.white};
-    }
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: ${(props) => props.theme.white};
+  }
 
-    svg {
-      width: 4.16rem;
-      height: 4.16rem;
+  svg {
+    width: 4.16rem;
+    height: 4.16rem;
 
-      color: ${(props) => props.theme.white};
-    }
+    color: ${(props) => props.theme.white};
   }
 
   @media screen and (max-width: 768px) {
-    nav {
-      flex-direction: column-reverse;
-      gap: 1.31rem;
-      align-items: center;
+    flex-direction: column-reverse;
+    gap: 1.31rem;
+    align-items: center;
 
-      text-align: center;
+    text-align: center;
 
-      h1 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-      h3 {
-        font-size: 1rem;
-      }
+    h3 {
+      font-size: 1rem;
+    }
 
-      svg {
-        width: 2.083rem;
-        height: 2.083rem;
-      }
+    svg {
+      width: 2.083rem;
+      height: 2.083rem;
     }
   }
 `

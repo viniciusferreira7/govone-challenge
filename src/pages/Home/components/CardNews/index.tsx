@@ -5,7 +5,7 @@ import plantation from '../../../../assets/plantation.svg'
 
 export function CardNews() {
   return (
-    <CardNewsContainer to="/" title="Notícia">
+    <CardNewsContainer to="/news" title="Notícia">
       <div>
         <img src={plantation} alt="foto relacionado a notícias" />
       </div>
