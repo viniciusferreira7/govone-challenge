@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   background: ${(props) => props.theme['blue-300']};
 `
 
-export const NavContainer = styled.nav`
+export const DivContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -56,8 +56,7 @@ export const NavContainer = styled.nav`
     }
 
     svg {
-      width: 2.083rem;
-      height: 2.083rem;
+      font-size: 2.083rem;
     }
   }
 `

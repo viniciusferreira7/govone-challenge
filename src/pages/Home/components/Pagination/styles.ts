@@ -42,10 +42,8 @@ export const PageIndicator = styled(RadioGroup.Item)`
   }
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
-
-    color: ${(props) => props.theme['gray-200']};
+    font-size: 1.5rem;
+    color: ${(props) => props.theme['blue-200']};
   }
 
   p {

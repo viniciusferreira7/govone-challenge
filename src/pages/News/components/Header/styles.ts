@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
 
   background: ${(props) => props.theme['blue-300']};
 `
-export const NavContainer = styled.nav`
+export const DivContainer = styled.div`
   display: flex;
   flex-direction: column;
 

@@ -1,9 +1,9 @@
-import { HeaderContainer, NavContainer } from './styles'
+import { HeaderContainer, DivContainer } from './styles'
 
 export function Header() {
   return (
     <HeaderContainer>
-      <NavContainer>
+      <DivContainer>
         <h4>agricultura</h4>
         <h1>
           Produção de grãos da safra 2020/21 deve alcançar 268,3 milhões de
@@ -15,7 +15,7 @@ export function Header() {
         <p>
           <strong>Publicado em:</strong> 27 de Outubro de 2022
         </p>
-      </NavContainer>
+      </DivContainer>
     </HeaderContainer>
   )
 }

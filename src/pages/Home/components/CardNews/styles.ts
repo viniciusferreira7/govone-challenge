@@ -120,8 +120,7 @@ export const DataIcon = styled.footer`
   font-size: 0.875rem;
 
   svg {
-    width: 0.875rem;
-    height: 0.875rem;
+    font-size: 0.875rem;
   }
 
   strong {
