@@ -14,7 +14,7 @@ export const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
 
-    max-width: 1040px;
+    max-width: 65rem;
     width: 100%;
 
     h1 {
