@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+export const HomeContainer = styled.div`
+  min-height: calc(100vh - 54px);
 
-  min-height: calc(100vh - 249px);
-  padding-top: 4rem;
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 4rem;
+  }
 `
