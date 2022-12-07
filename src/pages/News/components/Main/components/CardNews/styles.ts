@@ -4,7 +4,7 @@ export const CardNewsContainer = styled.div`
   max-width: 21rem;
   width: 100%;
   min-height: 27.56rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 6rem;
 
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 export const NavContainer = styled.nav`
   display: flex;
@@ -11,7 +12,7 @@ export const NavContainer = styled.nav`
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),
     0px 21px 21px rgba(60, 76, 112, 0.09);
 
-  div {
+  & > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,25 +20,25 @@ export const NavContainer = styled.nav`
     max-width: 65rem;
     width: 100%;
 
-    section {
+    & > div:first-of-type {
       display: flex;
       gap: 1.625rem;
     }
   }
 
   @media screen and (max-width: 768px) {
-    div {
+    & > div {
       justify-content: center;
       gap: 1.25rem;
 
-      section {
+      div:first-of-type {
         gap: 1.25rem;
       }
     }
   }
 `
 
-export const Action = styled.div`
+export const Action = styled(RadioGroup.Item)`
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -47,6 +48,9 @@ export const Action = styled.div`
   color: ${(props) => props.theme['gray-300']};
   text-transform: uppercase;
 
+  border: 0;
+  background: ${(props) => props.theme.white};
+
   cursor: pointer;
 
   svg {
@@ -54,6 +58,11 @@ export const Action = styled.div`
   }
 
   &:hover {
+    transition: all 300ms ease-in-out;
+    color: ${(props) => props.theme['gray-900']};
+  }
+
+  &[data-state='checked'] {
     color: ${(props) => props.theme['blue-300']};
   }
 
@@ -68,7 +77,7 @@ export const Action = styled.div`
   }
 `
 
-export const Share = styled.article`
+export const Share = styled(RadioGroup.Root)`
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -81,13 +90,24 @@ export const Share = styled.article`
     margin-right: -0.125rem;
   }
 
-  svg {
-    font-size: 1.25rem;
-    color: ${(props) => props.theme['gray-300']};
-    cursor: pointer;
+  button {
+    border: 0;
+    background: ${(props) => props.theme.white};
 
-    &:hover {
-      color: ${(props) => props.theme['blue-300']};
+    &[data-state='checked'] {
+      svg {
+        color: ${(props) => props.theme['blue-300']};
+      }
+    }
+
+    svg {
+      font-size: 1.25rem;
+      color: ${(props) => props.theme['gray-300']};
+      cursor: pointer;
+
+      &:hover {
+        color: ${(props) => props.theme['gray-900']};
+      }
     }
   }
 

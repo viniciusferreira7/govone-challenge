@@ -10,7 +10,7 @@ export const MainContainer = styled.main`
   margin-top: 4rem;
 
   & > img,
-  div {
+  & > div {
     max-width: 65rem;
     width: 100%;
     height: 26.81rem;
@@ -32,7 +32,7 @@ export const MainContainer = styled.main`
     margin-top: 2.5rem;
 
     & > img,
-    div {
+    & > div {
       height: 10rem;
     }
 
@@ -81,7 +81,7 @@ export const SectionContainer = styled.section`
   }
 `
 
-export const Line = styled.div`
+export const Line = styled.section`
   width: 100%;
   height: 1px;
   margin: 4.18rem 0 4rem 0;
