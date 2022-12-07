@@ -1,5 +1,6 @@
 import { Line, MainContainer, RelatedContent, SectionContainer } from './styles'
 import image from '../../../../assets/image.svg'
+import { CardNews } from './components/CardNews'
 
 export function Main() {
   return (
@@ -48,6 +49,11 @@ export function Main() {
       <RelatedContent>
         <h2>Conteúdo relacionado</h2>
         <p>Confira as últimas notícias do estado.</p>
+        <section>
+          <CardNews />
+          <CardNews />
+          <CardNews />
+        </section>
       </RelatedContent>
     </MainContainer>
   )
