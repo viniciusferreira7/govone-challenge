@@ -7,6 +7,7 @@ export const CardNewsContainer = styled(NavLink)`
 
   max-width: 65rem;
   width: 100%;
+  min-height: 16.14rem;
 
   background: ${(props) => props.theme.white};
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),
@@ -17,11 +18,12 @@ export const CardNewsContainer = styled(NavLink)`
 
   div {
     width: 14.12rem;
-    height: 14.12rem;
+    height: 16.14rem;
     overflow: hidden;
 
     img {
       width: 100%;
+      height: inherit;
       transition: all 300ms ease-in-out;
     }
   }
@@ -50,10 +52,6 @@ export const CardNewsContainer = styled(NavLink)`
       height: 12.625rem;
       overflow: hidden;
     }
-  }
-
-  & + & {
-    margin-top: 1.5rem;
   }
 `
 

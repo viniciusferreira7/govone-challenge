@@ -12,6 +12,17 @@ export function Home() {
     <HomeContainer>
       <Header />
       <main>
+        {news.map((news) => (
+          <CardNews
+            key={news.id}
+            category={news.categoria_titulo}
+            title={news.titulo}
+            resume={news.resumo}
+            published={news.publicado}
+            image={news.imagem_destaque_url}
+            imgDescription={news.descricao_imagem}
+          />
+        ))}
         <Pagination />
       </main>
     </HomeContainer>
