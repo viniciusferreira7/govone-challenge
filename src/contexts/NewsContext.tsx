@@ -1,11 +1,19 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useEffect,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from 'react'
 import { api } from '../lib/axios'
 
-interface NewsResults {
+interface News {
   id: number
   slug: string
   titulo: string
   resumo: string
+  conteudo: string
   autor_name: string
   editor_name: string
   publicado: string
@@ -28,7 +36,7 @@ interface NewsResults {
   created_at: string
   updated_at: string
 }
-interface NewsType {
+interface AllNews {
   count: number
   next: number
   previous: null
@@ -37,11 +45,13 @@ interface NewsType {
   page_size_query: string
   page_size: number
   total_pages: number
-  results: NewsResults[]
+  results: News[]
 }
 
 interface NewsContextType {
-  news: NewsResults[]
+  news: News[]
+  fetchNews: (page?: string, slug?: string) => Promise<void>
+  setQueryClear: Dispatch<SetStateAction<boolean>>
 }
 
 export const NewsContext = createContext({} as NewsContextType)
@@ -51,19 +61,29 @@ interface NewsProviderProps {
 }
 
 export function NewsProvider({ children }: NewsProviderProps) {
-  const [news, setNews] = useState<NewsResults[]>([])
+  const [news, setNews] = useState<News[]>([])
+  const [clearQuery, setQueryClear] = useState(true)
 
-  async function fetchNews() {
-    const response = await api.get('/')
+  async function fetchNews(page?: string, slug?: string) {
+    const response = await api.get('/', {
+      params: {
+        page,
+        slug,
+      },
+    })
 
     setNews(response.data.results)
   }
 
   useEffect(() => {
-    fetchNews()
-  }, [])
+    if (clearQuery) {
+      fetchNews()
+    }
+  }, [clearQuery])
 
   return (
-    <NewsContext.Provider value={{ news }}>{children}</NewsContext.Provider>
+    <NewsContext.Provider value={{ news, fetchNews, setQueryClear }}>
+      {children}
+    </NewsContext.Provider>
   )
 }

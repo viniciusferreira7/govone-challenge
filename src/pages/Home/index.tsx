@@ -15,6 +15,7 @@ export function Home() {
         {news.map((news) => (
           <CardNews
             key={news.id}
+            slug={news.slug}
             category={news.categoria_titulo}
             title={news.titulo}
             resume={news.resumo}

@@ -1,8 +1,12 @@
+import { useContext } from 'react'
 import { MdEditCalendar } from 'react-icons/md'
+import { NewsContext } from '../../../../contexts/NewsContext'
+import { dateFormat } from '../../../../utils/dateFormat'
 
 import { CardNewsContainer, DataIcon, SectionContainer } from './styles'
 
 interface CardNewsProps {
+  slug: string
   category: string
   title: string
   resume: string
@@ -12,6 +16,7 @@ interface CardNewsProps {
 }
 
 export function CardNews({
+  slug,
   category,
   published,
   resume,
@@ -19,17 +24,19 @@ export function CardNews({
   image,
   imgDescription,
 }: CardNewsProps) {
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  } as const
+  const { fetchNews, setQueryClear } = useContext(NewsContext)
 
-  const date = new Date(published).toLocaleDateString(undefined, options)
+  async function setNewsPageInformation(slug: string): Promise<void> {
+    await fetchNews(undefined, slug)
+    setQueryClear(false)
+  }
 
   return (
-    <CardNewsContainer to="/news" title="Notícia">
+    <CardNewsContainer
+      to="/news"
+      title="Notícia"
+      onClick={() => setNewsPageInformation(slug)}
+    >
       <div>
         <img src={image} alt={imgDescription} />
       </div>
@@ -40,7 +47,7 @@ export function CardNews({
         <DataIcon>
           <MdEditCalendar />
           <span>
-            <strong>Publicado:</strong> {date}
+            <strong>Publicado:</strong> {dateFormat(published)}
           </span>
         </DataIcon>
       </SectionContainer>

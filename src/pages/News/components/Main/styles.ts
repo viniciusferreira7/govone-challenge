@@ -22,6 +22,8 @@ export const MainContainer = styled.main`
   }
 
   & > p {
+    max-width: 65rem;
+    overflow-x: auto;
     font-size: 0.875rem;
     color: ${(props) => props.theme['gray-500']};
 
