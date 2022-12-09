@@ -38,8 +38,8 @@ interface News {
 }
 interface AllNews {
   count: number
-  next: number
-  previous: null
+  next: number | number
+  previous: null | number
   current: number
   query_param: string
   page_size_query: string
@@ -50,7 +50,8 @@ interface AllNews {
 
 interface NewsContextType {
   news: News[]
-  fetchNews: (page?: string, slug?: string) => Promise<void>
+  fetchNews: (page?: number | null, slug?: string) => Promise<void>
+  pageNumbers: AllNews | undefined
   setQueryClear: Dispatch<SetStateAction<boolean>>
 }
 
@@ -62,9 +63,10 @@ interface NewsProviderProps {
 
 export function NewsProvider({ children }: NewsProviderProps) {
   const [news, setNews] = useState<News[]>([])
+  const [pageNumbers, setPageNumbers] = useState<AllNews>()
   const [clearQuery, setQueryClear] = useState(true)
 
-  async function fetchNews(page?: string, slug?: string) {
+  async function fetchNews(page?: number | null, slug?: string) {
     const response = await api.get('/', {
       params: {
         page,
@@ -73,6 +75,7 @@ export function NewsProvider({ children }: NewsProviderProps) {
     })
 
     setNews(response.data.results)
+    setPageNumbers(response.data)
   }
 
   useEffect(() => {
@@ -82,7 +85,9 @@ export function NewsProvider({ children }: NewsProviderProps) {
   }, [clearQuery])
 
   return (
-    <NewsContext.Provider value={{ news, fetchNews, setQueryClear }}>
+    <NewsContext.Provider
+      value={{ news, fetchNews, pageNumbers, setQueryClear }}
+    >
       {children}
     </NewsContext.Provider>
   )

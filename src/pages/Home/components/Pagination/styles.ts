@@ -16,6 +16,7 @@ export const PaginationContainer = styled(RadioGroup.Root)`
     height: 2rem;
   }
 `
+
 export const PageIndicator = styled(RadioGroup.Item)`
   background: transparent;
   border: none;
