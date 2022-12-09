@@ -50,7 +50,11 @@ interface AllNews {
 
 interface NewsContextType {
   news: News[]
-  fetchNews: (page?: number | null, slug?: string) => Promise<void>
+  fetchNews: (
+    page?: number | null,
+    slug?: string,
+    categorySlug?: string,
+  ) => Promise<void>
   pageNumbers: AllNews | undefined
   setQueryClear: Dispatch<SetStateAction<boolean>>
 }
@@ -66,11 +70,16 @@ export function NewsProvider({ children }: NewsProviderProps) {
   const [pageNumbers, setPageNumbers] = useState<AllNews>()
   const [clearQuery, setQueryClear] = useState(true)
 
-  async function fetchNews(page?: number | null, slug?: string) {
+  async function fetchNews(
+    page?: number | null,
+    slug?: string,
+    categorySlug?: string,
+  ) {
     const response = await api.get('/', {
       params: {
         page,
         slug,
+        category_slug: categorySlug,
       },
     })
 

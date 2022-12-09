@@ -8,7 +8,7 @@ export function Pagination() {
   const { pageNumbers, fetchNews, setQueryClear } = useContext(NewsContext)
 
   async function setTheCurrentPageNumber(page: number | null): Promise<void> {
-    await fetchNews(page, undefined)
+    await fetchNews(page)
     setQueryClear(false)
   }
 
