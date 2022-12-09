@@ -2,8 +2,7 @@ import { CardNewsContainer, DataIcon } from './styles'
 import { MdEditCalendar } from 'react-icons/md'
 import { NavLink } from 'react-router-dom'
 import { dateFormat } from '../../../../../../utils/dateFormat'
-import { NewsContext } from '../../../../../../contexts/NewsContext'
-import { useContext } from 'react'
+import { usePageInformation } from '../../../../../../hooks/UsePageInformation'
 
 interface CardNewsProps {
   image: string
@@ -24,21 +23,7 @@ export function CardNews({
   slug,
   categorySlug,
 }: CardNewsProps) {
-  const { news, fetchNews, setQueryClear } = useContext(NewsContext)
-
-  function searchRelatedContent(slug: string, categorySlug: string) {
-    const relatedContent = news.filter(
-      (news) => news.categoria_slug === categorySlug && news.slug !== slug,
-    )
-    localStorage.setItem('relatedContent', JSON.stringify(relatedContent))
-  }
-
-  async function setNewsPageInformation(slug: string): Promise<void> {
-    searchRelatedContent(slug, categorySlug)
-
-    await fetchNews(undefined, slug)
-    setQueryClear(false)
-  }
+  const { setNewsPageInformation } = usePageInformation(categorySlug)
 
   return (
     <CardNewsContainer>
