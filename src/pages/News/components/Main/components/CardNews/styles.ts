@@ -60,6 +60,10 @@ export const CardNewsContainer = styled.div`
     font-size: 0.875rem;
     color: ${(props) => props.theme['blue-300']};
     cursor: pointer;
+
+    &:hover {
+      color: ${(props) => props.theme['blue-800']};
+    }
   }
 
   @media screen and (max-width: 768px) {

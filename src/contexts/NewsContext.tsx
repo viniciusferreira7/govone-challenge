@@ -8,7 +8,7 @@ import {
 } from 'react'
 import { api } from '../lib/axios'
 
-interface News {
+export interface News {
   id: number
   slug: string
   titulo: string

@@ -20,6 +20,7 @@ export function Home() {
               key={news.id}
               slug={news.slug}
               category={news.categoria_titulo}
+              categorySlug={news.categoria_slug}
               title={news.titulo}
               resume={news.resumo}
               published={news.publicado}

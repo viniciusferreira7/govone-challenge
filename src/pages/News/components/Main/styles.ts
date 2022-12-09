@@ -138,6 +138,7 @@ export const RelatedContent = styled.section`
 
     & > section {
       align-items: center;
+      justify-content: center;
       flex-direction: column;
       gap: 1.5rem;
     }

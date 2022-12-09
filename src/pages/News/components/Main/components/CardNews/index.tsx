@@ -1,21 +1,62 @@
 import { CardNewsContainer, DataIcon } from './styles'
-import image2 from '../../../../../../assets/image2.svg'
 import { MdEditCalendar } from 'react-icons/md'
 import { NavLink } from 'react-router-dom'
-export function CardNews() {
+import { dateFormat } from '../../../../../../utils/dateFormat'
+import { NewsContext } from '../../../../../../contexts/NewsContext'
+import { useContext } from 'react'
+
+interface CardNewsProps {
+  image: string
+  imgDescription: string
+  category: string
+  published: string
+  title: string
+  slug: string
+  categorySlug: string
+}
+
+export function CardNews({
+  image,
+  imgDescription,
+  category,
+  published,
+  title,
+  slug,
+  categorySlug,
+}: CardNewsProps) {
+  const { news, fetchNews, setQueryClear } = useContext(NewsContext)
+
+  function searchRelatedContent(slug: string, categorySlug: string) {
+    const relatedContent = news.filter(
+      (news) => news.categoria_slug === categorySlug && news.slug !== slug,
+    )
+    localStorage.setItem('relatedContent', JSON.stringify(relatedContent))
+  }
+
+  async function setNewsPageInformation(slug: string): Promise<void> {
+    searchRelatedContent(slug, categorySlug)
+
+    await fetchNews(undefined, slug)
+    setQueryClear(false)
+  }
+
   return (
     <CardNewsContainer>
-      <img src={image2} alt="image" />
+      <img src={image} alt={imgDescription} />
       <div>
-        <p>Agrícultura</p>
+        <p>{category}</p>
         <DataIcon>
           <MdEditCalendar />
-          <span>09 de julho de 2022</span>
+          <span>{dateFormat(published)}</span>
         </DataIcon>
       </div>
       <div>
-        <h2>Projeção indica crescimento da soja e milho safra 22/23 no MS</h2>
-        <NavLink to="/news" title="Notícia">
+        <h2>{title}</h2>
+        <NavLink
+          to="/news"
+          title="Notícia"
+          onClick={() => setNewsPageInformation(slug)}
+        >
           continue lendo
         </NavLink>
       </div>
