@@ -57,6 +57,7 @@ interface NewsContextType {
   ) => Promise<void>
   pageNumbers: AllNews | undefined
   setQueryClear: Dispatch<SetStateAction<boolean>>
+  loading: boolean
 }
 
 export const NewsContext = createContext({} as NewsContextType)
@@ -68,6 +69,7 @@ interface NewsProviderProps {
 export function NewsProvider({ children }: NewsProviderProps) {
   const [news, setNews] = useState<News[]>([])
   const [pageNumbers, setPageNumbers] = useState<AllNews>()
+  const [loading, setLoading] = useState(false)
   const [clearQuery, setQueryClear] = useState(true)
 
   async function fetchNews(
@@ -75,6 +77,8 @@ export function NewsProvider({ children }: NewsProviderProps) {
     slug?: string,
     categorySlug?: string,
   ) {
+    setLoading(true)
+
     const response = await api.get('/', {
       params: {
         page,
@@ -82,6 +86,8 @@ export function NewsProvider({ children }: NewsProviderProps) {
         category_slug: categorySlug,
       },
     })
+
+    setLoading(false)
 
     setNews(response.data.results)
     setPageNumbers(response.data)
@@ -95,7 +101,7 @@ export function NewsProvider({ children }: NewsProviderProps) {
 
   return (
     <NewsContext.Provider
-      value={{ news, fetchNews, pageNumbers, setQueryClear }}
+      value={{ news, fetchNews, pageNumbers, setQueryClear, loading }}
     >
       {children}
     </NewsContext.Provider>
