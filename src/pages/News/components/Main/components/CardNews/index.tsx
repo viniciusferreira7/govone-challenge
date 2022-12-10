@@ -23,7 +23,7 @@ export function CardNews({
   slug,
   categorySlug,
 }: CardNewsProps) {
-  const { setNewsPageInformation } = usePageInformation(categorySlug)
+  const { setNewsPageInformation } = usePageInformation()
 
   return (
     <CardNewsContainer>
@@ -40,7 +40,7 @@ export function CardNews({
         <NavLink
           to="/news"
           title="Notícia"
-          onClick={() => setNewsPageInformation(slug)}
+          onClick={() => setNewsPageInformation(slug, categorySlug)}
         >
           continue lendo
         </NavLink>

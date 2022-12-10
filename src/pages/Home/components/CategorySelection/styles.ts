@@ -1,14 +1,23 @@
 import styled from 'styled-components'
 import * as Select from '@radix-ui/react-select'
 
-export const CategorySelectionContainer = styled(Select.Root)``
+export const CategorySelectionContainer = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  max-width: 65rem;
+
+  width: 100%;
+  margin: 4rem auto 0.5rem auto;
+`
 
 export const Button = styled(Select.Trigger)`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  max-width: 7.4345rem;
+  max-width: 9rem;
   width: 100%;
   padding: 0.5rem;
   border: 1px solid ${(props) => props.theme['blue-300']};
@@ -16,6 +25,9 @@ export const Button = styled(Select.Trigger)`
 
   background: ${(props) => props.theme.white};
   color: ${(props) => props.theme['blue-300']};
+  text-transform: capitalize;
+
+  cursor: pointer;
 
   span {
     font-size: 0.875rem;
@@ -41,10 +53,19 @@ export const CategoryOptions = styled(Select.Group)`
   color: ${(props) => props.theme.white};
   border: 1px solid transparent;
   border-radius: 12px;
+
+  div:first-of-type {
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid ${(props) => props.theme.white};
+  }
 `
 
 export const CategoryItem = styled(Select.Item)`
   padding: 0.25rem;
+  text-transform: capitalize;
+
+  cursor: pointer;
 
   &:focus {
     background: ${(props) => props.theme.white};
@@ -52,5 +73,9 @@ export const CategoryItem = styled(Select.Item)`
     outline: none;
 
     border-radius: 6px;
+  }
+
+  &:last-of-type {
+    text-transform: uppercase;
   }
 `

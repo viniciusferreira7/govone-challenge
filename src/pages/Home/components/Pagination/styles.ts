@@ -22,6 +22,19 @@ export const PageIndicator = styled(RadioGroup.Item)`
   border: none;
   cursor: pointer;
 
+  &:nth-of-type(3) {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 -1rem;
+
+    background: ${(props) => props.theme['blue-300']};
+    border-radius: 99999px;
+
+    p {
+      color: ${(props) => props.theme.white};
+    }
+  }
+
   &[data-state='unchecked']:hover {
     p,
     svg {

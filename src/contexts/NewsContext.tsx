@@ -83,7 +83,7 @@ export function NewsProvider({ children }: NewsProviderProps) {
       params: {
         page,
         slug,
-        category_slug: categorySlug,
+        categoria_slug: categorySlug,
       },
     })
 

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { NewsContext } from '../contexts/NewsContext'
 
-export function usePageInformation(categorySlug?: string) {
+export function usePageInformation() {
   const { news, fetchNews, setQueryClear } = useContext(NewsContext)
 
   function searchRelatedContent(
@@ -16,11 +16,20 @@ export function usePageInformation(categorySlug?: string) {
     }
   }
 
-  async function setNewsPageInformation(slug: string): Promise<void> {
+  async function setNewsPageInformation(
+    slug: string,
+    categorySlug?: string,
+  ): Promise<void> {
     searchRelatedContent(slug, categorySlug)
     await fetchNews(undefined, slug)
     setQueryClear(false)
   }
 
-  return { setNewsPageInformation }
+  async function filterByCategory(categorySlug: string): Promise<void> {
+    await fetchNews(undefined, undefined, categorySlug)
+    setQueryClear(false)
+    console.log(news)
+  }
+
+  return { setNewsPageInformation, filterByCategory }
 }

@@ -25,13 +25,13 @@ export function CardNews({
   image,
   imgDescription,
 }: CardNewsProps) {
-  const { setNewsPageInformation } = usePageInformation(categorySlug)
+  const { setNewsPageInformation } = usePageInformation()
 
   return (
     <CardNewsContainer
       to="/news"
       title="Notícia"
-      onClick={() => setNewsPageInformation(slug)}
+      onClick={() => setNewsPageInformation(slug, categorySlug)}
     >
       <div>
         <img src={image} alt={imgDescription} />
