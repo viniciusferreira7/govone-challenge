@@ -1,15 +1,21 @@
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import styled from 'styled-components'
 
-export const PaginationContainer = styled(RadioGroup.Root)`
-  display: flex;
+interface PaginationContainerProps {
+  active: string
+}
+
+export const PaginationContainer = styled(
+  RadioGroup.Root,
+)<PaginationContainerProps>`
+  display: ${(props) => (props.active === 'true' ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
   gap: 1.87rem;
 
   width: 100%;
   height: 2.5rem;
-  margin: 3rem 0 6rem 0;
+  margin-top: 3rem;
 
   @media screen and (max-width: 768px) {
     gap: 1.68rem;

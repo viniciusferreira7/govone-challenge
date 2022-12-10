@@ -55,9 +55,11 @@ interface NewsContextType {
     slug?: string,
     categorySlug?: string,
   ) => Promise<void>
-  pageNumbers: AllNews | undefined
   setQueryClear: Dispatch<SetStateAction<boolean>>
+  pageNumbers: AllNews | undefined
   loading: boolean
+  activePagination: boolean
+  setActivePagination: Dispatch<SetStateAction<boolean>>
 }
 
 export const NewsContext = createContext({} as NewsContextType)
@@ -70,6 +72,7 @@ export function NewsProvider({ children }: NewsProviderProps) {
   const [news, setNews] = useState<News[]>([])
   const [pageNumbers, setPageNumbers] = useState<AllNews>()
   const [loading, setLoading] = useState(false)
+  const [activePagination, setActivePagination] = useState(true)
   const [clearQuery, setQueryClear] = useState(true)
 
   async function fetchNews(
@@ -101,7 +104,15 @@ export function NewsProvider({ children }: NewsProviderProps) {
 
   return (
     <NewsContext.Provider
-      value={{ news, fetchNews, pageNumbers, setQueryClear, loading }}
+      value={{
+        news,
+        fetchNews,
+        pageNumbers,
+        setQueryClear,
+        loading,
+        activePagination,
+        setActivePagination,
+      }}
     >
       {children}
     </NewsContext.Provider>

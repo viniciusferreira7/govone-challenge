@@ -7,6 +7,7 @@ export const FooterContainer = styled.footer`
 
   width: 100%;
   min-height: 3.375rem;
+  margin-top: 6rem;
 
   background: ${(props) => props.theme['blue-800']};
   color: ${(props) => props.theme.white};

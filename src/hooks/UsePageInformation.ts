@@ -2,7 +2,8 @@ import { useContext } from 'react'
 import { NewsContext } from '../contexts/NewsContext'
 
 export function usePageInformation() {
-  const { news, fetchNews, setQueryClear } = useContext(NewsContext)
+  const { news, fetchNews, setQueryClear, setActivePagination } =
+    useContext(NewsContext)
 
   function searchRelatedContentAndStore(
     slug: string,
@@ -28,10 +29,11 @@ export function usePageInformation() {
   async function filterByCategory(categorySlug: string): Promise<void> {
     if (categorySlug === 'sem filtro') {
       setQueryClear(true)
+      setActivePagination(true)
     } else {
       await fetchNews(undefined, undefined, categorySlug)
       setQueryClear(false)
-      console.log(news)
+      setActivePagination(false)
     }
   }
 

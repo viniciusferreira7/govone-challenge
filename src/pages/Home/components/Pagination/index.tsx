@@ -5,7 +5,8 @@ import { NewsContext } from '../../../../contexts/NewsContext'
 import { PageIndicator, PaginationContainer } from './styles'
 
 export function Pagination() {
-  const { pageNumbers, fetchNews, setQueryClear } = useContext(NewsContext)
+  const { pageNumbers, fetchNews, setQueryClear, activePagination } =
+    useContext(NewsContext)
 
   async function setTheCurrentPageNumber(page: number | null): Promise<void> {
     await fetchNews(page)
@@ -13,7 +14,7 @@ export function Pagination() {
   }
 
   return (
-    <PaginationContainer>
+    <PaginationContainer active={`${activePagination}`}>
       {pageNumbers && (
         <>
           <PageIndicator
