@@ -29,7 +29,7 @@ export function Main() {
           />
           <p>Foto: {news && news[0].autor_imagem}</p>
           <SectionContainer>
-            <div
+            <p
               dangerouslySetInnerHTML={{
                 __html: news ? news[0].conteudo : '',
               }}

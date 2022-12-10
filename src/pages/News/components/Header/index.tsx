@@ -6,8 +6,6 @@ import { HeaderContainer, DivContainer } from './styles'
 export function Header() {
   const { news } = useContext(NewsContext)
 
-  console.log(news && news[0].autor_nome)
-
   return (
     <HeaderContainer>
       <DivContainer>
