@@ -4,7 +4,7 @@ import { NewsContext } from '../contexts/NewsContext'
 export function usePageInformation() {
   const { news, fetchNews, setQueryClear } = useContext(NewsContext)
 
-  function searchRelatedContent(
+  function searchRelatedContentAndStore(
     slug: string,
     categorySlug: string | undefined,
   ) {
@@ -20,15 +20,19 @@ export function usePageInformation() {
     slug: string,
     categorySlug?: string,
   ): Promise<void> {
-    searchRelatedContent(slug, categorySlug)
+    searchRelatedContentAndStore(slug, categorySlug)
     await fetchNews(undefined, slug)
     setQueryClear(false)
   }
 
   async function filterByCategory(categorySlug: string): Promise<void> {
-    await fetchNews(undefined, undefined, categorySlug)
-    setQueryClear(false)
-    console.log(news)
+    if (categorySlug === 'sem filtro') {
+      setQueryClear(true)
+    } else {
+      await fetchNews(undefined, undefined, categorySlug)
+      setQueryClear(false)
+      console.log(news)
+    }
   }
 
   return { setNewsPageInformation, filterByCategory }

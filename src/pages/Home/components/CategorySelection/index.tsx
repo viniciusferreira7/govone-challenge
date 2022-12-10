@@ -57,7 +57,7 @@ export function CategorySelection() {
                   </CategoryItem>
                 ))}
 
-                <CategoryItem value={undefined}>
+                <CategoryItem value="sem filtro">
                   <Select.ItemText>Sem filtro</Select.ItemText>
                   <Select.ItemIndicator>
                     <MdCheck />

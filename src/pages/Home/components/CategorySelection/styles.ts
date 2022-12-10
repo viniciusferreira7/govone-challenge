@@ -10,6 +10,10 @@ export const CategorySelectionContainer = styled.div`
 
   width: 100%;
   margin: 4rem auto 0.5rem auto;
+
+  @media screen and (max-width: 768px) {
+    max-width: 20.43rem;
+  }
 `
 
 export const Button = styled(Select.Trigger)`
