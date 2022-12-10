@@ -5,7 +5,6 @@ export const CardNewsContainer = styled.div`
   width: 100%;
   min-height: 27.56rem;
   padding-bottom: 1.5rem;
-  margin-bottom: 6rem;
 
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),
     0px 21px 21px rgba(60, 76, 112, 0.09);
@@ -67,8 +66,9 @@ export const CardNewsContainer = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    max-width: 20.4375rem;
     min-height: 23.4375rem;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 
     &:last-of-type {
       margin-bottom: 6rem;
@@ -81,13 +81,15 @@ export const CardNewsContainer = styled.div`
       border-color: transparent;
     }
 
-    div {
-      p {
-        font-size: 0.8125rem;
-      }
+    img {
+      max-width: 20.4375rem;
     }
 
-    h2 {
+    div > p {
+      font-size: 0.8125rem;
+    }
+
+    div > h2 {
       font-size: 1rem;
       margin-bottom: 2rem;
     }

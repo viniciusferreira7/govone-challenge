@@ -35,6 +35,7 @@ export const MainContainer = styled.main`
 
     & > img,
     & > div {
+      max-width: 20.4375rem;
       height: 10rem;
     }
 
@@ -49,10 +50,17 @@ export const SectionContainer = styled.section`
   width: 100%;
   margin-top: 2.5rem;
 
-  p {
+  div {
     line-height: 32px;
     color: ${(props) => props.theme['gray-900']};
     margin-bottom: 2rem;
+
+    p:has(img) {
+      img {
+        width: 100%;
+        max-width: 65rem;
+      }
+    }
   }
 
   span {
@@ -69,12 +77,18 @@ export const SectionContainer = styled.section`
   @media screen and (max-width: 768px) {
     margin: 0 auto;
     margin-top: 2rem;
-    max-width: 23.25rem;
+    max-width: 20.4375rem;
 
-    p {
+    div {
       margin-bottom: 1.5rem;
 
       font-size: 0.875rem;
+
+      p:has(img) {
+        img {
+          height: 12rem;
+        }
+      }
     }
 
     span {

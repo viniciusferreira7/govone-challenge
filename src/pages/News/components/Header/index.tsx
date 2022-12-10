@@ -6,13 +6,15 @@ import { HeaderContainer, DivContainer } from './styles'
 export function Header() {
   const { news } = useContext(NewsContext)
 
+  console.log(news && news[0].autor_nome)
+
   return (
     <HeaderContainer>
       <DivContainer>
         <h4>{news && news[0].categoria_titulo}</h4>
         <h1>{news && news[0].titulo}</h1>
         <p>
-          <strong>Autor:</strong> {news && news[0].autor_name}
+          <strong>Autor:</strong> {news && news[0].autor_nome}
         </p>
         <p>
           <strong>Publicado em:</strong>{' '}

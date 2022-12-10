@@ -32,9 +32,9 @@ export const DivContainer = styled.div`
     color: ${(props) => props.theme.white};
   }
 
-  svg {
+  img {
     width: 4.16rem;
-    height: 4.16rem;
+    height: 3.66rem;
 
     color: ${(props) => props.theme.white};
   }
@@ -55,8 +55,9 @@ export const DivContainer = styled.div`
       font-size: 1rem;
     }
 
-    svg {
-      font-size: 2.083rem;
+    img {
+      width: 2.08rem;
+      height: 1.83rem;
     }
   }
 `

@@ -14,8 +14,8 @@ export interface News {
   titulo: string
   resumo: string
   conteudo: string
-  autor_name: string
-  editor_name: string
+  autor_nome: string
+  editor_nome: string
   publicado: string
   imagem_destaque_url: string
   autor_imagem: string

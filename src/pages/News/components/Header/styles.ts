@@ -48,8 +48,9 @@ export const DivContainer = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    text-align: center;
+    max-width: 20.4375rem;
     padding: 2.5rem 1.5rem;
+    text-align: center;
 
     h4 {
       font-size: 0.81rem;

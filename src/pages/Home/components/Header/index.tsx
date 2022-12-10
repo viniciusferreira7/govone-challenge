@@ -1,5 +1,5 @@
 import { HeaderContainer, DivContainer } from './styles'
-import { ImNewspaper } from 'react-icons/im'
+import newspaper from '../../../../assets/newspaper.svg'
 
 export function Header() {
   return (
@@ -9,7 +9,7 @@ export function Header() {
           <h1>Últimas notícias</h1>
           <h3>Confira as últimas notícias do estado.</h3>
         </div>
-        <ImNewspaper />
+        <img src={newspaper} alt="ícone de notícias" />
       </DivContainer>
     </HeaderContainer>
   )

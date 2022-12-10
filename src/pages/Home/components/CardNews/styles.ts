@@ -44,6 +44,7 @@ export const CardNewsContainer = styled(NavLink)`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    gap: 0;
 
     max-width: 20.43rem;
 
@@ -59,7 +60,7 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  padding: 1.5rem 0;
+  margin: 1.5rem 0;
 
   h4 {
     font-size: 0.875rem;

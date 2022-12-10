@@ -15,6 +15,7 @@ export const FooterContainer = styled.footer`
 
   @media screen and (max-width: 768px) {
     padding: 1.5rem;
+    margin-top: 3.5rem;
 
     p {
       max-width: 20.43rem;
