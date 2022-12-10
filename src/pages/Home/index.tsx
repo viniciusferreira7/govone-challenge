@@ -4,6 +4,7 @@ import { CardNews } from './components/CardNews'
 import { CategorySelection } from './components/CategorySelection'
 import { Header } from './components/Header'
 import { Pagination } from './components/Pagination'
+import { SkeletonLoading } from './components/SkeletonLoading'
 import { HomeContainer } from './styles'
 
 export function Home() {
@@ -13,11 +14,11 @@ export function Home() {
     <HomeContainer>
       <Header />
       <CategorySelection />
-      {loading ? (
-        <p>Carregando...</p>
-      ) : (
-        <main>
-          {news.map((news) => (
+      <main>
+        {loading ? (
+          <SkeletonLoading />
+        ) : (
+          news.map((news) => (
             <CardNews
               key={news.id}
               slug={news.slug}
@@ -29,10 +30,10 @@ export function Home() {
               image={news.imagem_destaque_url}
               imgDescription={news.descricao_imagem}
             />
-          ))}
-          <Pagination />
-        </main>
-      )}
+          ))
+        )}
+        <Pagination />
+      </main>
     </HomeContainer>
   )
 }

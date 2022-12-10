@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
     "@radix-ui/react-radio-group": "^1.1.0",
     "@radix-ui/react-select": "^1.1.2",
     "axios": "^1.2.1",
