@@ -1,17 +1,20 @@
 ## GoVone Challenge
 
-<https://govone-challenge.vercel.app/>
-
+<br/>
 
 - Portal de notícias 
+
+<br/>
+
+<https://govone-challenge.vercel.app/>
 
 <hr>
 
 ## **Tecnologias**
 
-## `React.js`
+#### `React.js`
 
-## `TypeScript`
+#### `TypeScript`
 
 #### `React-router-dom`
 
