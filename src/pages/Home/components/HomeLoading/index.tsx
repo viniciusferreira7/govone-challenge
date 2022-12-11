@@ -1,9 +1,9 @@
 import { Skeleton } from '@mui/material'
-import { SkeletonGroup, SkeletonLoadingContainer } from './styles'
+import { SkeletonGroup, HomeLoadingContainer } from './styles'
 
-export function SkeletonLoading() {
+export function HomeLoading() {
   return (
-    <SkeletonLoadingContainer>
+    <HomeLoadingContainer>
       <SkeletonGroup>
         <Skeleton width="14.12rem" height="16.14rem" variant="rectangular" />
         <Skeleton width="50.88rem" height="16.14rem" variant="rectangular" />
@@ -16,6 +16,6 @@ export function SkeletonLoading() {
         <Skeleton width="14.12rem" height="16.14rem" variant="rectangular" />
         <Skeleton width="50.88rem" height="16.14rem" variant="rectangular" />
       </SkeletonGroup>
-    </SkeletonLoadingContainer>
+    </HomeLoadingContainer>
   )
 }

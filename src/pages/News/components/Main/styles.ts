@@ -50,7 +50,7 @@ export const SectionContainer = styled.section`
   width: 100%;
   margin-top: 2.5rem;
 
-  div {
+  article {
     line-height: 32px;
     color: ${(props) => props.theme['gray-900']};
     margin-bottom: 2rem;
@@ -79,7 +79,7 @@ export const SectionContainer = styled.section`
     margin-top: 2rem;
     max-width: 20.4375rem;
 
-    div {
+    article {
       margin-bottom: 1.5rem;
 
       font-size: 0.875rem;

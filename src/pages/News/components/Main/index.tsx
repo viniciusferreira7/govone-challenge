@@ -19,9 +19,7 @@ export function Main() {
 
   return (
     <MainContainer>
-      {loading ? (
-        <p>Carregando...</p>
-      ) : (
+      {!loading && (
         <>
           <img
             src={news && news[0].imagem_destaque_url}

@@ -5,7 +5,7 @@ import { NewsContext } from '../../../../contexts/NewsContext'
 import { PageIndicator, PaginationContainer } from './styles'
 
 export function Pagination() {
-  const { pageNumbers, fetchNews, setQueryClear, activePagination } =
+  const { pageNumbers, fetchNews, setQueryClear, activePagination, loading } =
     useContext(NewsContext)
 
   async function setTheCurrentPageNumber(page: number | null): Promise<void> {
@@ -13,13 +13,17 @@ export function Pagination() {
     setQueryClear(false)
   }
 
+  const ifPreviousPageIsNull = pageNumbers?.previous === null
+  const ifNextPageIsNull = pageNumbers?.next === null
+
   return (
-    <PaginationContainer active={`${activePagination}`}>
+    <PaginationContainer loading={`${loading}`} active={`${activePagination}`}>
       {pageNumbers && (
         <>
           <PageIndicator
             value="Voltar"
             aria-label="Voltar"
+            disabled={ifPreviousPageIsNull}
             onClick={() => setTheCurrentPageNumber(pageNumbers.current - 1)}
           >
             <IoIosArrowBack />
@@ -48,6 +52,7 @@ export function Pagination() {
           <PageIndicator
             value="Próximo"
             aria-label="Próximo"
+            disabled={ifNextPageIsNull}
             onClick={() => setTheCurrentPageNumber(pageNumbers.current + 1)}
           >
             <IoIosArrowForward />
