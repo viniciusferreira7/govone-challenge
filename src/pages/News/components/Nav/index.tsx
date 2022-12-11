@@ -4,17 +4,29 @@ import { FiLink2 } from 'react-icons/fi'
 
 import { Action, NavContainer, Share } from './styles'
 import * as RadioGroup from '@radix-ui/react-radio-group'
+import { useContext } from 'react'
+import { NewsContext } from '../../../../contexts/NewsContext'
 
 export function Nav() {
+  const { setChangeImageToVideo } = useContext(NewsContext)
+
+  function setImage() {
+    setChangeImageToVideo(false)
+  }
+
+  function setVideo() {
+    setChangeImageToVideo(true)
+  }
+
   return (
     <NavContainer>
       <div>
         <RadioGroup.Root>
-          <Action value="ver imagem" aria-label="Ver imagem">
+          <Action onClick={setImage} value="ver imagem" aria-label="Ver imagem">
             <HiPhotograph />
             <span>ver imagem</span>
           </Action>
-          <Action value="ver vídeo" aria-label="Ver vídeo">
+          <Action onClick={setVideo} value="ver vídeo" aria-label="Ver vídeo">
             <BsFillPlayCircleFill />
             <span>ver vídeo</span>
           </Action>

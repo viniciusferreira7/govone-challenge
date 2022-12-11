@@ -60,6 +60,8 @@ interface NewsContextType {
   loading: boolean
   activePagination: boolean
   setActivePagination: Dispatch<SetStateAction<boolean>>
+  changeImageToVideo: boolean
+  setChangeImageToVideo: Dispatch<SetStateAction<boolean>>
 }
 
 export const NewsContext = createContext({} as NewsContextType)
@@ -73,6 +75,7 @@ export function NewsProvider({ children }: NewsProviderProps) {
   const [pageNumbers, setPageNumbers] = useState<AllNews>()
   const [loading, setLoading] = useState(false)
   const [activePagination, setActivePagination] = useState(true)
+  const [changeImageToVideo, setChangeImageToVideo] = useState(false)
   const [clearQuery, setQueryClear] = useState(true)
 
   async function fetchNews(
@@ -90,10 +93,9 @@ export function NewsProvider({ children }: NewsProviderProps) {
       },
     })
 
-    setLoading(false)
-
     setNews(response.data.results)
     setPageNumbers(response.data)
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -112,6 +114,8 @@ export function NewsProvider({ children }: NewsProviderProps) {
         loading,
         activePagination,
         setActivePagination,
+        changeImageToVideo,
+        setChangeImageToVideo,
       }}
     >
       {children}

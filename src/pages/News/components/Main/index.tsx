@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from 'react'
 import { Line, MainContainer, RelatedContent, SectionContainer } from './styles'
 import { CardNews } from './components/CardNews'
 import { News, NewsContext } from '../../../../contexts/NewsContext'
+import { BsFillCameraVideoOffFill } from 'react-icons/bs'
 
 export function Main() {
-  const { news, setQueryClear, loading } = useContext(NewsContext)
+  const { news, setQueryClear, loading, changeImageToVideo } =
+    useContext(NewsContext)
   const [relatedContent, setRelatedContent] = useState<News[]>()
 
   useEffect(() => {
@@ -19,12 +21,19 @@ export function Main() {
 
   return (
     <MainContainer>
-      {!loading && (
+      {!loading ? (
         <>
-          <img
-            src={news && news[0].imagem_destaque_url}
-            alt={news && news[0].descricao_imagem}
-          />
+          {changeImageToVideo ? (
+            <div>
+              <BsFillCameraVideoOffFill />
+              <p>Vídeo indisponível</p>
+            </div>
+          ) : (
+            <img
+              src={news && news[0].imagem_destaque_url}
+              alt={news && news[0].descricao_imagem}
+            />
+          )}
           <p>Foto: {news && news[0].autor_imagem}</p>
           <SectionContainer>
             <p
@@ -56,7 +65,7 @@ export function Main() {
             </section>
           </RelatedContent>
         </>
-      )}
+      ) : null}
     </MainContainer>
   )
 }

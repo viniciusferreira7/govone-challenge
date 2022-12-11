@@ -18,7 +18,21 @@ export const MainContainer = styled.main`
   }
 
   & > div {
-    background: ${(props) => props.theme['blue-300']};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: ${(props) => props.theme['blue-200']};
+    color: ${(props) => props.theme['gray-300']};
+
+    svg {
+      font-size: 4rem;
+    }
+
+    p {
+      font-weight: 700;
+    }
   }
 
   & > p {

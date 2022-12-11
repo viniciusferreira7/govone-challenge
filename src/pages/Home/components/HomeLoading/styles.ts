@@ -10,8 +10,4 @@ export const HomeLoadingContainer = styled.article`
 export const SkeletonGroup = styled.div`
   display: flex;
   gap: 0.15rem;
-
-  &:last-of-type {
-    margin-top: 2rem;
-  }
 `
