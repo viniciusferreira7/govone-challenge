@@ -30,14 +30,10 @@ export function Nav() {
     const shareData = {
       title: news[0].titulo,
       text: news[0].resumo,
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share',
+      url: 'https://govone-challenge.vercel.app/news',
     }
-    try {
-      await navigator.share(shareData)
-      console.log('sharing')
-    } catch (err) {
-      console.log(Error)
-    }
+
+    await navigator.share(shareData)
   }
 
   return (

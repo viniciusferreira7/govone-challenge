@@ -33,6 +33,7 @@ export function NewsLoading() {
         <div>
           <Skeleton width="14.875rem" height="1.5rem" variant="text" />
           <div>
+            <Skeleton width="5.3125rem" height="1.25rem" variant="text" />
             <IconLoading>
               <Skeleton width="1.25rem" height="1.015rem" variant="text" />
             </IconLoading>

@@ -29,14 +29,16 @@ export function Main() {
               <p>Vídeo indisponível</p>
             </div>
           ) : (
-            <img
-              src={news && news[0].imagem_destaque_url}
-              alt={news && news[0].descricao_imagem}
-            />
+            <>
+              <img
+                src={news && news[0].imagem_destaque_url}
+                alt={news && news[0].descricao_imagem}
+              />
+              <p>Foto: {news && news[0].autor_imagem}</p>
+            </>
           )}
-          <p>Foto: {news && news[0].autor_imagem}</p>
           <SectionContainer>
-            <p
+            <article
               dangerouslySetInnerHTML={{
                 __html: news ? news[0].conteudo : '',
               }}
