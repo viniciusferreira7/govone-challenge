@@ -2,7 +2,6 @@
 
 <https://govone-challenge.vercel.app/>
 
-<hr>
 
 - Portal de notícias 
 
@@ -10,24 +9,25 @@
 
 ## **Tecnologias**
 
-### `React.js`
+## `React.js`
 
-### `TypeScript`
+## `TypeScript`
 
-### `React-router-dom`
-### `Styled-Components`
+#### `React-router-dom`
 
-### `React-icons`
+#### `Styled-Components`
 
-### `Material UI`
+#### `React-icons`
 
-### `Radix UI`
+#### `Material UI`
 
-### `Axios`
+#### `Radix UI`
 
-### `Commitizen`
+#### `Axios`
 
-### `cz-conventional-changelog`
+#### `Commitizen`
 
-### `@rocketseat/eslint-config`
+#### `cz-conventional-changelog`
+
+#### `@rocketseat/eslint-config`
 
