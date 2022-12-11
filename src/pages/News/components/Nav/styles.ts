@@ -100,6 +100,10 @@ export const Share = styled(RadioGroup.Root)`
       }
     }
 
+    a {
+      text-decoration: none;
+    }
+
     svg {
       font-size: 1.25rem;
       color: ${(props) => props.theme['gray-300']};

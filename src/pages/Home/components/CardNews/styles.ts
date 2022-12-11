@@ -17,14 +17,16 @@ export const CardNewsContainer = styled(NavLink)`
   text-decoration: none;
 
   div {
+    display: flex;
+    align-items: center;
     width: 14.12rem;
-    height: 16.14rem;
     overflow: hidden;
 
     img {
       width: 100%;
-      height: inherit;
+      height: 16.14rem;
       transition: all 300ms ease-in-out;
+      transform: scale(1.21);
     }
   }
 
@@ -33,7 +35,7 @@ export const CardNewsContainer = styled(NavLink)`
     border-color: ${(props) => props.theme['blue-300']};
 
     img {
-      transform: scale(1.3);
+      transform: scale(1.6);
     }
   }
 
