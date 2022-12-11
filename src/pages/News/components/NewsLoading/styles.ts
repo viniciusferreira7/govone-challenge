@@ -1,9 +1,12 @@
 import styled from 'styled-components'
+import { NewsContainer } from '../../styles'
 import { DivContainer, HeaderContainer } from '../Header/styles'
 import { MainContainer, RelatedContent } from '../Main/styles'
 import { NavContainer } from '../Nav/styles'
 
-export const NewsLoadingContainer = styled.div``
+export const NewsLoadingContainer = styled(NewsContainer)`
+  overflow: hidden;
+`
 
 export const HeaderLoading = styled(HeaderContainer)``
 

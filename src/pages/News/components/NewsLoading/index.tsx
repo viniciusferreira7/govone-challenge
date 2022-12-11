@@ -16,59 +16,154 @@ export function NewsLoading() {
       <HeaderLoading>
         <DivLoading>
           <h4>
-            <Skeleton width="5.875rem" height="1.0625rem" variant="text" />
+            <Skeleton
+              width="5.875rem"
+              height="1.0625rem"
+              variant="text"
+              animation="wave"
+            />
           </h4>
           <h1>
-            <Skeleton width="63.8125rem" height="6.375rem" variant="text" />
+            <Skeleton
+              width="63.8125rem"
+              height="6.375rem"
+              variant="text"
+              animation="wave"
+            />
           </h1>
           <p>
-            <Skeleton width="11.4375rem" height="1.625rem" variant="text" />
+            <Skeleton
+              width="11.4375rem"
+              height="1.625rem"
+              variant="text"
+              animation="wave"
+            />
           </p>
           <p>
-            <Skeleton width="17.875rem" height="1.625rem" variant="text" />
+            <Skeleton
+              width="17.875rem"
+              height="1.625rem"
+              variant="text"
+              animation="wave"
+            />
           </p>
         </DivLoading>
       </HeaderLoading>
       <NavLoading>
         <div>
-          <Skeleton width="14.875rem" height="1.5rem" variant="text" />
+          <Skeleton
+            width="14.875rem"
+            height="1.5rem"
+            variant="text"
+            animation="wave"
+          />
           <div>
-            <Skeleton width="5.3125rem" height="1.25rem" variant="text" />
+            <Skeleton
+              width="5.3125rem"
+              height="1.25rem"
+              variant="text"
+              animation="wave"
+            />
             <IconLoading>
-              <Skeleton width="1.25rem" height="1.015rem" variant="text" />
+              <Skeleton
+                width="1.25rem"
+                height="1.015rem"
+                variant="text"
+                animation="wave"
+              />
             </IconLoading>
             <IconLoading>
-              <Skeleton width="1.25rem" height="1.015rem" variant="text" />
+              <Skeleton
+                width="1.25rem"
+                height="1.015rem"
+                variant="text"
+                animation="wave"
+              />
             </IconLoading>
             <IconLoading>
-              <Skeleton width="1.25rem" height="1.015rem" variant="text" />
+              <Skeleton
+                width="1.25rem"
+                height="1.015rem"
+                variant="text"
+                animation="wave"
+              />
             </IconLoading>
           </div>
         </div>
       </NavLoading>
       <MainLoading>
-        <Skeleton width="65rem" height="26.8125rem" variant="rectangular" />
+        <Skeleton
+          width="65rem"
+          height="26.8125rem"
+          variant="rectangular"
+          animation="wave"
+        />
         <p>
-          <Skeleton width="10rem" height="1.375rem" variant="text" />
+          <Skeleton
+            width="10rem"
+            height="1.375rem"
+            variant="text"
+            animation="wave"
+          />
         </p>
         <SectionLoading>
           <article>
-            <Skeleton width="65rem" height="35.375rem" variant="text" />
-            <Skeleton width="65rem" height="5.375rem" variant="text" />
-            <Skeleton width="65rem" height="25.375rem" variant="text" />
+            <Skeleton
+              width="65rem"
+              height="35.375rem"
+              variant="text"
+              animation="wave"
+            />
+            <Skeleton
+              width="65rem"
+              height="5.375rem"
+              variant="text"
+              animation="wave"
+            />
+            <Skeleton
+              width="65rem"
+              height="25.375rem"
+              variant="text"
+              animation="wave"
+            />
           </article>
         </SectionLoading>
         <RelatedContentLoading>
           <h2>
-            <Skeleton width="22.18rem" height="2.375rem" variant="text" />
+            <Skeleton
+              width="22.18rem"
+              height="2.375rem"
+              variant="text"
+              animation="wave"
+            />
           </h2>
           <p>
-            <Skeleton width="19.625rem" height="1.8125rem" variant="text" />
+            <Skeleton
+              width="19.625rem"
+              height="1.8125rem"
+              variant="text"
+              animation="wave"
+            />
           </p>
           <section>
-            <Skeleton width="21rem" height="27.56rem" variant="text" />
-            <Skeleton width="21rem" height="27.56rem" variant="text" />
-            <Skeleton width="21rem" height="27.56rem" variant="text" />
+            <Skeleton
+              width="21rem"
+              height="27.56rem"
+              variant="text"
+              animation="wave"
+            />
+            <Skeleton
+              width="21rem"
+              height="27.56rem"
+              variant="text"
+              animation="wave"
+            />
+            <Skeleton
+              width="21rem"
+              height="27.56rem"
+              variant="text"
+              animation="wave"
+            />
           </section>
         </RelatedContentLoading>
       </MainLoading>

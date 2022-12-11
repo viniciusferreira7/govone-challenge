@@ -13,6 +13,7 @@ export const CategorySelectionContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     max-width: 20.43rem;
+    margin: 2.5rem auto 0.5rem auto;
   }
 `
 

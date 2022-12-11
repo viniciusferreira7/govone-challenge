@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   width: 100%;
-  height: 12.18rem;
+  height: 12.1875rem;
 
   background: ${(props) => props.theme['blue-300']};
 `
@@ -34,21 +34,23 @@ export const DivContainer = styled.div`
 
   img {
     width: 4.16rem;
-    height: 3.66rem;
+    height: 3.65rem;
 
     color: ${(props) => props.theme.white};
   }
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
-    gap: 1.31rem;
+    gap: 0.5rem;
     align-items: center;
 
     text-align: center;
 
+    max-width: 20.4375rem;
+
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.81rem;
     }
 
     h3 {

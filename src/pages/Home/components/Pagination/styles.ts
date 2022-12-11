@@ -12,8 +12,9 @@ export const PaginationContainer = styled(
   display: ${(props) => (props.active === 'true' ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
-  gap: 1.87rem;
+  gap: 1.9875rem;
 
+  max-width: 12.5rem;
   width: 100%;
   height: 2.5rem;
   margin-top: 3rem;

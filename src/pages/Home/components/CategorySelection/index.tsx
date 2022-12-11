@@ -19,7 +19,7 @@ export function CategorySelection() {
   const allCategory: Category[] = [
     { category_titulo: 'auxilio', category_slug: 'auxilio3612' },
     { category_titulo: 'finanças', category_slug: 'categoria-da-vaval6157' },
-    { category_titulo: 'saúde', category_slug: '' },
+    { category_titulo: 'saúde', category_slug: 'testando7140' },
     { category_titulo: 'seguros', category_slug: 'seguros7303' },
     { category_titulo: 'casa própria', category_slug: 'teste6933' },
     { category_titulo: 'auxílio moradia', category_slug: 'teste7642' },

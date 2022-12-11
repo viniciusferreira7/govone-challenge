@@ -7,7 +7,7 @@ export const CardNewsContainer = styled(NavLink)`
 
   max-width: 65rem;
   width: 100%;
-  min-height: 16.14rem;
+  min-height: 14.125rem;
 
   background: ${(props) => props.theme.white};
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),
@@ -19,12 +19,12 @@ export const CardNewsContainer = styled(NavLink)`
   div {
     display: flex;
     align-items: center;
-    width: 14.12rem;
+    width: 14.125rem;
     overflow: hidden;
 
     img {
       width: 100%;
-      height: 16.14rem;
+      height: 14.125rem;
       transition: all 300ms ease-in-out;
       transform: scale(1.21);
     }
@@ -48,7 +48,8 @@ export const CardNewsContainer = styled(NavLink)`
     align-items: center;
     gap: 0;
 
-    max-width: 20.43rem;
+    max-width: 20.4375rem;
+    min-height: 29.3125rem;
 
     div {
       width: inherit;
@@ -62,6 +63,8 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
 
+  max-width: 42.75rem;
+  width: 100%;
   margin: 1.5rem 0;
 
   h4 {
@@ -74,7 +77,6 @@ export const SectionContainer = styled.section`
   }
 
   h2 {
-    max-width: 39rem;
     margin-bottom: 0.5rem;
 
     font-size: 1.5rem;
@@ -114,7 +116,7 @@ export const SectionContainer = styled.section`
 
 export const DataIcon = styled.footer`
   display: flex;
-  gap: 0.53rem;
+  gap: 0.53625rem;
   align-items: center;
 
   color: ${(props) => props.theme['gray-500']};
@@ -131,8 +133,11 @@ export const DataIcon = styled.footer`
   @media screen and (max-width: 768px) {
     justify-content: center;
 
-    strong {
-      display: none;
+    span {
+      font-size: 0.8125rem;
+      strong {
+        display: none;
+      }
     }
   }
 `

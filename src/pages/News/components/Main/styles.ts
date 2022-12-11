@@ -146,6 +146,9 @@ export const RelatedContent = styled.section`
   & > section {
     display: flex;
     gap: 1rem;
+
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   @media screen and (max-width: 768px) {
