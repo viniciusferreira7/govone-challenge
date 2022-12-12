@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { NewsContext } from '../../contexts/NewsContext'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
@@ -8,14 +8,23 @@ import { NewsContainer } from './styles'
 
 export function News() {
   const { news } = useContext(NewsContext)
+  const [changeImageToVideo, setChangeImageToVideo] = useState(false)
+
+  function setImage() {
+    setChangeImageToVideo(false)
+  }
+
+  function setVideo() {
+    setChangeImageToVideo(true)
+  }
 
   return (
     <NewsContainer>
       {news.length >= 1 ? (
         <>
           <Header />
-          <Nav />
-          <Main />
+          <Nav setImage={setImage} setVideo={setVideo} />
+          <Main changeImageToVideo={changeImageToVideo} />
         </>
       ) : (
         <NewsLoading />

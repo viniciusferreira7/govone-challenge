@@ -7,16 +7,13 @@ import * as RadioGroup from '@radix-ui/react-radio-group'
 import { useContext } from 'react'
 import { NewsContext } from '../../../../contexts/NewsContext'
 
-export function Nav() {
-  const { news, setChangeImageToVideo } = useContext(NewsContext)
+interface NavProps {
+  setImage: () => void
+  setVideo: () => void
+}
 
-  function setImage() {
-    setChangeImageToVideo(false)
-  }
-
-  function setVideo() {
-    setChangeImageToVideo(true)
-  }
+export function Nav({ setImage, setVideo }: NavProps) {
+  const { news } = useContext(NewsContext)
 
   const shareWithTwitter = `https://twitter.com/intent/tweet?text=${
     news[0].titulo + '--Resumo:' + news[0].resumo

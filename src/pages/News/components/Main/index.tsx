@@ -4,9 +4,12 @@ import { CardNews } from './components/CardNews'
 import { News, NewsContext } from '../../../../contexts/NewsContext'
 import { BsFillCameraVideoOffFill } from 'react-icons/bs'
 
-export function Main() {
-  const { news, setQueryClear, loading, changeImageToVideo } =
-    useContext(NewsContext)
+interface MainProps {
+  changeImageToVideo: boolean
+}
+
+export function Main({ changeImageToVideo }: MainProps) {
+  const { news, setQueryClear, loading } = useContext(NewsContext)
   const [relatedContent, setRelatedContent] = useState<News[]>()
 
   useEffect(() => {
