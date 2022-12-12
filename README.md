@@ -3,6 +3,9 @@
 <br/>
 
 - Portal de notícias 
+- SPA
+- Paginação
+- Filtro por categoria
 
 <br/>
 
@@ -33,4 +36,6 @@
 #### `cz-conventional-changelog`
 
 #### `@rocketseat/eslint-config`
+
+#### `Docker`
 
