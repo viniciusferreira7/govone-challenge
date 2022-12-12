@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   width: 100%;
-  min-height: 18.68rem;
+  min-height: 18.6875rem;
 
   background: ${(props) => props.theme['blue-300']};
 `

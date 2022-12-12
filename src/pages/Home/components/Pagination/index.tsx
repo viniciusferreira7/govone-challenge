@@ -22,6 +22,7 @@ export function Pagination() {
         <>
           <PageIndicator
             value="Voltar"
+            title="Voltar uma Página"
             aria-label="Voltar"
             disabled={ifPreviousPageIsNull}
             onClick={() => setTheCurrentPageNumber(pageNumbers.current - 1)}
@@ -51,6 +52,7 @@ export function Pagination() {
           </PageIndicator>
           <PageIndicator
             value="Próximo"
+            title="Proxima página"
             aria-label="Próximo"
             disabled={ifNextPageIsNull}
             onClick={() => setTheCurrentPageNumber(pageNumbers.current + 1)}

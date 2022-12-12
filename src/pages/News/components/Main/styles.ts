@@ -13,7 +13,7 @@ export const MainContainer = styled.main`
   & > div {
     max-width: 65rem;
     width: 100%;
-    height: 26.81rem;
+    height: 26.625rem;
     border-radius: 5px;
   }
 
@@ -36,8 +36,6 @@ export const MainContainer = styled.main`
   }
 
   & > p {
-    max-width: 65rem;
-    overflow-x: auto;
     font-size: 0.875rem;
     color: ${(props) => props.theme['gray-500']};
 
@@ -72,7 +70,10 @@ export const SectionContainer = styled.section`
     p:has(img) {
       img {
         width: 100%;
-        max-width: 65rem;
+        margin: 0.5rem 0;
+        max-width: 30rem;
+        height: 15.8125rem;
+        border-radius: 5px;
       }
     }
   }
@@ -114,7 +115,7 @@ export const SectionContainer = styled.section`
 export const Line = styled.section`
   width: 100%;
   height: 1px;
-  margin: 4.18rem 0 4rem 0;
+  margin: 4.1875rem 0 4rem 0;
 
   background: ${(props) => props.theme['blue-200']};
 
@@ -129,7 +130,7 @@ export const RelatedContent = styled.section`
 
   text-align: left;
 
-  h2 {
+  & > h2 {
     font-size: 2rem;
     font-weight: 700;
     color: ${(props) => props.theme['gray-900']};
@@ -155,11 +156,11 @@ export const RelatedContent = styled.section`
     max-width: 23.25rem;
     margin: 0 auto;
 
-    h2 {
+    & > h2 {
       text-align: center;
       font-size: 1.5rem;
 
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
     & > p {
@@ -171,7 +172,7 @@ export const RelatedContent = styled.section`
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
     }
   }
 `

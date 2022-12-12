@@ -40,11 +40,21 @@ export function Nav() {
     <NavContainer>
       <div>
         <RadioGroup.Root>
-          <Action onClick={setImage} value="ver imagem" aria-label="Ver imagem">
+          <Action
+            onClick={setImage}
+            value="ver imagem"
+            title="Trocar para imagem"
+            aria-label="Ver imagem"
+          >
             <HiPhotograph />
             <span>ver imagem</span>
           </Action>
-          <Action onClick={setVideo} value="ver vídeo" aria-label="Ver vídeo">
+          <Action
+            onClick={setVideo}
+            value="ver vídeo"
+            title="Trocar para vídeo"
+            aria-label="Ver vídeo"
+          >
             <BsFillPlayCircleFill />
             <span>ver vídeo</span>
           </Action>
@@ -57,7 +67,7 @@ export function Nav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BsTwitter aria-label="ícone do Twitter" />
+              <BsTwitter title="Twitter" aria-label="ícone do Twitter" />
             </a>
           </RadioGroup.Item>
           <RadioGroup.Item value="WhatsApp">
@@ -66,11 +76,11 @@ export function Nav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BsWhatsapp aria-label="ícone do WhatsApp" />
+              <BsWhatsapp title="WhatsApp" aria-label="ícone do WhatsApp" />
             </a>
           </RadioGroup.Item>
           <RadioGroup.Item onClick={() => shareWithLink()} value="Link">
-            <FiLink2 aria-label="ícone de Link" />
+            <FiLink2 title="Link" aria-label="ícone de Link" />
           </RadioGroup.Item>
         </Share>
       </div>

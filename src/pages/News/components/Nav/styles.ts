@@ -32,7 +32,7 @@ export const NavContainer = styled.nav`
       gap: 1.25rem;
 
       div:first-of-type {
-        gap: 1.25rem;
+        gap: 1.3125rem;
       }
     }
   }
@@ -54,7 +54,11 @@ export const Action = styled(RadioGroup.Item)`
   cursor: pointer;
 
   svg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  span {
+    font-size: 0.875rem;
   }
 
   &:hover {

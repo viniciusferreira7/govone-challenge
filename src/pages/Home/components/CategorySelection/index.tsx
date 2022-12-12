@@ -26,7 +26,7 @@ export function CategorySelection() {
   ]
 
   return (
-    <CategorySelectionContainer>
+    <CategorySelectionContainer title="Escolher categoria">
       <Select.Root onValueChange={(event) => filterByCategory(event)}>
         <Button>
           <Select.Value placeholder="Categoria" />

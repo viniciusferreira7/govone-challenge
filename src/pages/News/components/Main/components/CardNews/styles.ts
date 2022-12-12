@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const CardNewsContainer = styled.div`
   max-width: 21rem;
   width: 100%;
-  min-height: 27.56rem;
+  min-height: 27.5625rem;
   padding-bottom: 1.5rem;
 
   box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01),
@@ -83,6 +83,7 @@ export const CardNewsContainer = styled.div`
 
     img {
       max-width: 20.4375rem;
+      height: 12.625rem;
     }
 
     div > p {
@@ -102,7 +103,7 @@ export const CardNewsContainer = styled.div`
 
 export const DataIcon = styled.footer`
   display: flex;
-  gap: 0.53rem;
+  gap: 0.286rem;
   align-items: center;
 
   color: ${(props) => props.theme['gray-500']};
